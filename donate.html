@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Vision Care Foundation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #0066cc;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .logo span {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: normal;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        nav ul li a.active {
+            font-weight: bold;
+        }
+        
+        nav ul li a.active:after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+        }
+        
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Main Content Styles */
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            color: #0066cc;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            color: #0066cc;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .payment-method, .gallery-item, .testimonial-card {
+            background-color: #f5f9ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        .coming-soon {
+            background-color: #fff8e6;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #0066cc;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #0055aa;
+        }
+        
+        /* Impact Gallery Styles */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .image-caption {
+            margin-top: 0.5rem;
+            font-weight: bold;
+            color: #0066cc;
+        }
+        
+        .stats-section {
+            background-color: #0066cc;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <strong>VISION CARE</strong>
+            <span>FOUNDATION</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mission.html">Our Mission</a></li>
+                <li><a href="work.html">Our Work</a></li>
+                <li><a href="donate.html" class="active">Donate</a></li>
+                <!-- Changed from "Donate Now" to just "Donate" -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Donation Section -->
+        <section id="donate">
+            <h1>Help Us Restore Sight</h1>
+            <p>Your generous donation helps us provide vision care to underserved communities. Choose your preferred payment method below:</p>
+            
+            <h2>Credit/Debit Card (Visa)</h2>
+            <div class="payment-method">
+                <form id="card-donation-form">
+                    <div style="margin-bottom: 1rem;">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div>
+                            <label for="expiry-date">Expiry Date</label>
+                            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        <div>
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="card-name">Name on Card</label>
+                        <input type="text" id="card-name" name="card-name" placeholder="John Doe" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="donation-amount">Donation Amount (USD)</label>
+                        <input type="number" id="donation-amount" name="donation-amount" min="1" placeholder="50" required style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Donate Now</button>
+                </form>
+                
+                <div style="margin-top: 1rem; text-align: center;">
+                    <img src="https://www.visa.com/dam/VCOM/global/partner-with-us/payment-technology/visa-logo-800x450.jpg" alt="Visa" style="height: 40px; margin: 0 5px;">
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">Secure payment processed by our trusted partner</p>
+                </div>
+            </div>
+            
+            <h2>Bank Transfer</h2>
+            <div class="payment-method">
+                <table>
+                    <tr>
+                        <th>Bank Name:</th>
+                        <td>NMB Bank</td>
+                    </tr>
+                    <tr>
+                        <th>Account Name:</th>
+                        <td>Vision Care Foundation</td>
+                    </tr>
+                    <tr>
+                        <th>Account Number:</th>
+                        <td>23910004564</td>
+                    </tr>
+                    <tr>
+                        <th>SWIFT Code:</th>
+                        <td>NMBFZTZ</td>
+                    </tr>
+                    <tr>
+                        <th>Currency:</th>
+                        <td>TZS (Tanzanian Shillings)</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="payment-method">
+                <h3>M-Pesa</h3>
+                <ol>
+                    <li>Go to M-Pesa on your phone</li>
+                    <li>Select "Lipa na M-Pesa"</li>
+                    <li>Select "Pay Bill"</li>
+                    <li>Enter business number: <strong>123456</strong></li>
+                    <li>Enter account number: <strong>VISION</strong></li>
+                    <li>Enter amount</li>
+                    <li>Complete transaction</li>
+                </ol>
+            </div>
+            
+            <div class="payment-method">
+                <h3>Halotel</h3>
+                <ol>
+                    <li>Go to Halotel Money on your phone</li>
+                    <li>Select "Send Money"</li>
+                    <li>Enter phone number: <strong>0717 123456</strong></li>
+                    <li>Enter amount</li>
+                    <li>Enter reference: <strong>VISION</strong></li>
+                    <li>Complete transaction</li>
+                </ol>
+            </div>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="#impact" class="btn">See Your Impact</a>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section id="impact">
+            <h2>See Your Impact</h2>
+            <p>Every donation helps us bring vision care to those who need it most. Here's how your support makes a difference:</p>
+            
+            <div class="stats-section">
+                <h3>Our Impact in Numbers</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">5,000+</div>
+                        <div class="stat-label">Eye Exams Provided</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1,200+</div>
+                        <div class="stat-label">Eyeglasses Distributed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">300+</div>
+                        <div class="stat-label">Cataract Surgeries</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Communities Reached</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Our Teams in Action</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/eye-exam-field.jpg" alt="Eye exam in rural village">
+                    <div class="image-caption">Mobile Clinic in Dodoma</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/child-eyeglasses.jpg" alt="Child receiving glasses">
+                    <div class="image-caption">First Pair of Glasses</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/senior-care.jpg" alt="Elderly patient care">
+                    <div class="image-caption">Cataract Screening</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/team-training.jpg" alt="Medical training">
+                    <div class="image-caption">Training Local Providers</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/school-screening.jpg" alt="School vision test">
+                    <div class="image-caption">School Screening Program</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/surgery-clinic.jpg" alt="Cataract surgery">
+                    <div class="image-caption">Surgical Outreach</div>
+                </div>
+            </div>
+            
+            <h3>Stories of Impact</h3>
+            <div class="testimonial-card">
+                <p>"Before Vision Care Foundation came to our village, I had nearly given up hope of ever seeing clearly again. Thanks to their free cataract surgery, I can now see my grandchildren's faces."</p>
+                <p><strong>- Mzee Juma, 68, Mbeya Region</strong></p>
+            </div>
+            
+            <div class="testimonial-card">
+                <p>"I struggled in school for years before realizing I needed glasses. The Vision Care team tested my eyes and gave me glasses that changed everything."</p>
+                <p><strong>- Neema, 12, Standard 5 Student</strong></p>
+            </div>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="#donate" class="btn">Make a Difference Today</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="mission.html">Our Mission</a>
+            <a href="work.html">Our Work</a>
+            <a href="donate.html">Donate</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+        <div class="logo">
+            <strong>VISION CARE</strong>
+            <span>FOUNDATION</span>
+        </div>
+        <div class="copyright">
+            © 2025 Vision Care Foundation. All rights reserved.
+        </div>
+    </footer>
+    <script>
+    document.getElementById('card-donation-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const cardData = {
+            number: document.getElementById('card-number').value,
+            expiry: document.getElementById('expiry-date').value,
+            cvv: document.getElementById('cvv').value,
+            name: document.getElementById('card-name').value,
+            amount: document.getElementById('donation-amount').value
+        };
+        
+        // In a real implementation, you would send this to your server
+        // which would then communicate with the payment processor
+        console.log('Donation attempt:', cardData);
+        
+        // Show a thank you message (in reality, wait for processor response)
+        alert('Thank you for your donation! A receipt will be sent to your email.');
+        this.reset();
+    });
+</script>
+</body>
+</html>

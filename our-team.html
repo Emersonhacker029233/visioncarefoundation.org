@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Vision Care Foundation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        :root {
+            --primary: #0066cc;
+            --primary-dark: #004d99;
+            --primary-light: #e6f2ff;
+            --secondary: #ff6600;
+            --dark: #333;
+            --medium: #555;
+            --light: #777;
+            --lighter: #f5f5f5;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--medium);
+            background-color: var(--lighter);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 102, 204, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 102, 204, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h3 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h3:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            color: var(--light);
+        }
+
+        /* Header Styles */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            transition: var(--transition);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 60px;
+            transition: var(--transition);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 15px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--dark);
+            padding: 10px 0;
+            position: relative;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover:after,
+        nav ul li a.active:after {
+            width: 100%;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--white);
+            min-width: 220px;
+            box-shadow: var(--shadow);
+            border-radius: 5px;
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+            transform: translateY(10px);
+        }
+
+        nav ul li:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .dropdown-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu li a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--medium);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 15px;
+        }
+
+        .dropdown-menu li:hover {
+            background-color: var(--primary-light);
+        }
+
+        .dropdown-menu li:hover a {
+            color: var(--primary);
+            padding-left: 25px;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+
+        .mobile-menu:hover {
+            color: var(--primary);
+        }
+
+        /* Team Section Styles */
+        .team-section {
+            background-color: white;
+            padding: 80px 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-img-container {
+            height: 250px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.team-img {
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top; /* This focuses on faces */
+    transition: transform 0.3s ease;
+}
+
+/* Specific fix for Dr. Frank Sandi's image */
+.team-card:nth-child(4) .team-img-container {
+    background-color: #f0f0f0; /* Fallback color */
+}
+
+.team-card:nth-child(4) .team-img {
+    object-position: center 25%; /* Adjust this percentage as needed */
+}
+
+        .team-card:hover .team-img {
+            transform: scale(1.05);
+        }
+
+        .team-content {
+    min-height: 200px; /* Adjust as needed */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+        .team-card h4 {
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .team-position {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .team-card p {
+            color: var(--light);
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .read-more-btn:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            overflow-y: auto;
+            padding: 40px 0;
+        }
+
+        .modal-content {
+            background-color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            position: relative;
+        }
+
+        .modal-header h3 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .modal-position {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 30px;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .modal-body p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .modal-body strong {
+            color: var(--primary);
+        }
+
+        /* Donate Banner */
+        .donate-banner {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+            margin: 60px 0;
+        }
+
+        .donate-banner h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .donate-banner p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 80px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-about {
+            margin-bottom: 30px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4, 
+        .footer-contact h4 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h4:after,
+        .footer-contact h4:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            transition: var(--transition);
+            display: block;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-contact i {
+            margin-top: 5px;
+            color: var(--primary);
+        }
+
+        .footer-map-container {
+            margin: 50px 0;
+        }
+
+        .footer-map {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .section-padding {
+                padding: 80px 0;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px 0;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                z-index: 999;
+                padding: 30px;
+                overflow-y: auto;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                box-shadow: none;
+                padding-left: 20px;
+                margin-top: 10px;
+                transform: none;
+                border-left: 2px solid var(--primary-light);
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .donate-banner h2 {
+                font-size: 30px;
+            }
+            
+            .modal-content {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .section-title h3 {
+                font-size: 28px;
+            }
+            
+            .team-card {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+            
+            .donate-banner h2 {
+                font-size: 26px;
+            }
+            
+            .donate-banner p {
+                font-size: 16px;
+            }
+            
+            .modal-header {
+                padding: 20px;
+            }
+            
+            .modal-header h3 {
+                font-size: 24px;
+            }
+            
+            .modal-body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="images/logo1-removebg-preview.png" alt="Vision Care Foundation Logo">
+            </div>
+    
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    
+                    <!-- About Us Dropdown -->
+                    <li class="dropdown">
+                        <a href="about.html">About Us <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="mission-vision.html">Mission & Vision</a></li>
+                            <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                            <li><a href="our-team.html">Our Team</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    
+                    <!-- Donate Button -->
+                    <li><a href="donate.html" class="btn donate-btn">DONATE NOW</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Team Section -->
+    <section class="team-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h3>Our Dedicated Team</h3>
+                <p>Meet the passionate professionals working tirelessly to eliminate preventable blindness by 2040</p>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-card">
+                    <div class="team-img-container">
+                        <img src="images/team1.jpg" alt="Eden Mashayo" class="team-img">
+                    </div>
+                    <div class="team-content">
+                        <h4>Eden Mashayo</h4>
+                        <span class="team-position">Chairman</span>
+                        <p>Leading our foundation with strategic vision and commitment to eye care for all.</p>
+                        <a href="#" class="read-more-btn" data-member="eden">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-card">
+                    <div class="team-img-container">
+                        <img src="images/team2.jpg" alt="Rebecca Kasika" class="team-img">
+                    </div>
+                    <div class="team-content">
+                        <h4>Rebecca Kasika</h4>
+                        <span class="team-position">Founding Member</span>
+                        <p>Tanzanian Social Worker and Public Health Specialist with over 11 years of experience.</p>
+                        <a href="#" class="read-more-btn" data-member="rebecca">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-card">
+                    <div class="team-img-container">
+                        <img src="images/team3.jpg" alt="Christina Sifael Mbise" class="team-img">
+                    </div>
+                    <div class="team-content">
+                        <h4>Christina Sifael Mbise</h4>
+                        <span class="team-position">Founding Member | Treasurer</span>
+                        <p>Seasoned public health professional with a decade of experience in eye health systems.</p>
+                        <a href="#" class="read-more-btn" data-member="christina">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-card">
+                    <div class="team-img-container">
+                        <img src="images/DR F.jpg" alt="Dr. Frank Sandi" class="team-img">
+                    </div>
+                    <div class="team-content">
+                        <h4>Dr. Frank Sandi</h4>
+                        <span class="team-position">Founding Member</span>
+                        <p>Highly respected ophthalmologist dedicated to advancing eye health in Tanzania.</p>
+                        <a href="#" class="read-more-btn" data-member="frank">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 5 -->
+                <div class="team-card">
+                    <div class="team-img-container">
+                        <img src="images/team5.jpg" alt="Careen Erick Mashayo" class="team-img">
+                    </div>
+                    <div class="team-content">
+                        <h4>Careen Erick Mashayo</h4>
+                        <span class="team-position">Founding Member</span>
+                        <p>Licensed Optometrist with over 15 years of experience in clinical eye care.</p>
+                        <a href="#" class="read-more-btn" data-member="careen">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 6 -->
+                <div class="team-card">
+                    <div class="team-img-container">
+                        <img src="images/team6.jpg" alt="Happy Waziri" class="team-img">
+                    </div>
+                    <div class="team-content">
+                        <h4>Happy Waziri</h4>
+                        <span class="team-position">Team Member</span>
+                        <p>Dedicated professional contributing to our mission of eliminating preventable blindness.</p>
+                        <a href="#" class="read-more-btn" data-member="happy">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Banner -->
+    <section class="donate-banner">
+        <div class="container">
+            <h2>Support Our Vision</h2>
+            <p>Your donation helps us provide eye care services to underserved communities and eliminate preventable blindness</p>
+            <a href="donate.html" class="btn btn-outline">Donate Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/logo1.png" alt="Vision Care Foundation Logo">
+                    </div>
+                    <p>Committed to eliminating preventable and curable blindness by 2040 through affordable, accessible, and quality eye health solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Goba Road, 755H+PV3 Dar es Salaam</p>
+                    <p><i class="fas fa-phone"></i> +255 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@visioncare.org</p>
+                </div>
+            </div>
+            
+            <!-- Map section centered and enlarged -->
+            <div class="footer-map-container">
+                <div class="footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.041888111228!2d39.20841431532848!3d-6.753895595093933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4ed39d9b138f%3A0x5d5f5e5e5e5e5e5e!2sGoba%20Road%2C%20Dar%20es%20Salaam!5e0!3m2!1sen!2stz!4v1620000000000!5m2!1sen!2stz" 
+                            width="100%" height="400" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; 2023 Vision Care Foundation. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Team Member Modals -->
+    <!-- Eden Mashayo Modal -->
+    <div class="modal" id="eden-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal">&times;</span>
+                <h3>Eden Mashayo</h3>
+                <span class="modal-position">Chairman</span>
+            </div>
+            <div class="modal-body">
+                <p><strong>Eden Mashayo</strong> serves as the Chairman of Vision Care Foundation, providing strategic leadership and guidance to the organization's mission of eliminating preventable blindness.</p>
+                <p>With a deep commitment to eye care accessibility, Eden oversees the foundation's operations and ensures alignment with its core values and objectives.</p>
+                <p>Under his leadership, the foundation has expanded its reach and impact across Tanzania, implementing innovative programs that bring quality eye care services to underserved communities.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rebecca Kasika Modal -->
+    <div class="modal" id="rebecca-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal">&times;</span>
+                <h3>Rebecca Kasika</h3>
+                <span class="modal-position">Founding Member</span>
+            </div>
+            <div class="modal-body">
+                <p><strong>Rebecca Kasika</strong> is a Tanzanian Social Worker and Public Health Specialist with over 11 years of experience designing and managing community‑based programs that strengthen local health systems and protect vulnerable populations.</p>
+                
+                <p>She holds an <strong>MSc in Public Health</strong> from Muhimbili University of Health and Allied Sciences and a <strong>BA in Social Work & Social Administration</strong> from Bugema University and has completed executive training at the Humphrey School of Public Affairs (University of Minnesota) as well as the Mandela Washington Fellowship (U.S. Department of State).</p>
+                
+                <p>Fluent in Kiswahili and English (with basic French), Rebecca has forged partnerships across the Ministry of Health, PORALG, Ministry of Education, and national school‑ and reproductive‑health programs to embed child eye health into policy and practice. At the Brien Holden Vision Institute, she led integrated eye‑health initiatives across 14 districts---training over 75,000 teachers and frontline health workers and directly benefiting more than 1.4 million children.</p>
+                
+                <p>Today, Rebecca serves as <strong>Programme Administrator for Quality Assurance</strong> at the Embassy of Sweden in Dar es Salaam. In this role, she ensures full compliance with Sida's operational standards, oversees financial stewardship and internal controls for all contributions and builds the capacity of program officers and decision‑makers. She coordinates international training courses---having trained 300+ Tanzanian government leaders---manages multi‑million‑dollar budgets and contributes to appraisal and learning processes across the Embassy's portfolio.</p>
+                
+                <p>Driven by a passion for inclusive economic empowerment, human rights, and sustainable development, Rebecca continues to champion social justice and equitable access to health and education in Tanzania.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Christina Sifael Mbise Modal -->
+    <div class="modal" id="christina-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal">&times;</span>
+                <h3>Christina Sifael Mbise</h3>
+                <span class="modal-position">Founding Member | Treasurer</span>
+            </div>
+            <div class="modal-body">
+                <p><strong>Christina Sifael Mbise</strong> is a seasoned public health professional and one of the founding members of the <strong>Vision Care Foundation (VCF)</strong>. With over a decade of extensive experience in public health and development programming, she has played a pivotal role in advancing <strong>eye health systems</strong> and promoting <strong>inclusive, sustainable health services</strong> in Tanzania.</p>
+                
+                <p>Ms. Mbise holds a <strong>master's degree in public health</strong> from the <strong>University of Dar es Salaam</strong>, complemented by a <strong>Postgraduate Diploma in Leadership and Management of the Civil Society Sector</strong> from <strong>Strathmore University in Kenya</strong>, and a <strong>Bachelor of Arts in Sociology</strong> from the University of Dar es Salaam. Her strong academic background has provided a solid foundation for her strategic leadership in program design, implementation, policy advocacy, and capacity building.</p>
+                
+                <p>Professionally, she has held key technical and managerial roles in several international NGOs, including Sightsavers, Pact, JHPIEGO, FHI360, and Amref Health Africa. She has led major eye health initiatives, including the <strong>integration of primary eye care into the national health system</strong>, the <strong>development of an Eye Health Information System</strong>, and the <strong>inclusion of eye health commodities into Tanzania's Medical Stores Department (MSD)</strong> supply chain.</p>
+                
+                <p>Within Vision Care Foundation, Ms. Mbise continues to provide strategic leadership and technical oversight, particularly in aligning the Foundation's programs with national priorities and global frameworks such as the <strong>2030 In Sight</strong> strategy. Her commitment to evidence-based approaches, inclusive health services, and system strengthening is instrumental in achieving VCF's vision of equitable and quality eye care for all.</p>
+                
+                <p><strong>Public Health Specialist | Eye Health Systems Advocate | Strategic Program Leader</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dr. Frank Sandi Modal -->
+    <div class="modal" id="frank-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal">&times;</span>
+                <h3>Dr. Frank Sandi, MD, FRCOph(ECSA)</h3>
+                <span class="modal-position">Founding Member | Past President - Tanzania Ophthalmology Society</span>
+            </div>
+            <div class="modal-body">
+                <p><strong>Dr. Frank Sandi</strong> is a highly respected ophthalmologist, academician, and public health advocate with a distinguished career dedicated to advancing eye health in Tanzania and the broader Eastern, Central, and Southern Africa region. As one of the founding members of the <strong>Vision Care Foundation (VCF)</strong>, Dr. Sandi has been instrumental in establishing and implementing innovative, community-based eye care interventions targeting vulnerable and underserved populations.</p>
+                
+                <p>With advanced clinical training in glaucoma, cataract surgery (including PHACO techniques), and neuro-ophthalmology, Dr. Sandi brings a wealth of clinical expertise to the Foundation. He is a Fellow of the <strong>College of Ophthalmology of Eastern, Central and Southern Africa (COECSA)</strong> and a graduate of prestigious leadership development programs under the American Academy of Ophthalmology, International Council of Ophthalmology, and African Ophthalmology Council.</p>
+                
+                <p>Dr. Sandi also holds a <strong>Diploma in Tropical Medicine and Hygiene</strong> from the London School of Hygiene and Tropical Medicine and a <strong>Postgraduate Diploma in Community Economic Development</strong>, which reflects his broader commitment to public health and socioeconomic equity in healthcare delivery.</p>
+                
+                <p>In his current roles as <strong>Head of the Department of Surgery</strong> at the University of Dodoma (UDOM) and <strong>Clinical Instructor at Benjamin Mkapa Hospital</strong>, Dr. Sandi actively mentors the next generation of eye health professionals while leading large-scale outreach programs. His leadership has facilitated vision screening and surgical restoration services for thousands of Tanzanians, in partnership with global institutions such as Weill Cornell Medicine and the Moran Eye Center.</p>
+                
+                <p>He also served as <strong>President of the Tanzania Ophthalmology Society</strong>, where he champions national and regional eye health policy, and as <strong>Trachoma Technical Advisor to the Ministry of Health</strong>, supporting efforts to eliminate neglected tropical diseases causing blindness.</p>
+                
+                <p>Dr. Sandi's pioneering work with the Vision Care Foundation continues to drive impactful, evidence-based interventions that aim to eliminate avoidable blindness and ensure equitable access to quality eye care across Tanzania.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Careen Erick Modal -->
+    <div class="modal" id="careen-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal">&times;</span>
+                <h3>Careen Erick Mashayo</h3>
+                <span class="modal-position">Founding Member | Licensed Optometrist</span>
+            </div>
+            <div class="modal-body">
+                <p><strong>Careen Erick</strong> is a licensed and accomplished optometrist with over <strong>15 years of experience</strong> in clinical eye care, public health, and community vision programs. As a <strong>founding member of Vision Care Foundation</strong>, she has played a vital role in designing and delivering sustainable eye health interventions aimed at improving the lives of underserved communities across Tanzania.</p>
+                
+                <p>She serves as a <strong>National Trainer of Trainers (TOT) for School Eye Health</strong>, a position through which she has <strong>successfully trained over 50 trainers</strong> across various regions. Her trainees --- including teachers, health professionals, and community facilitators --- have become active agents of change in identifying, managing, and referring school children with visual impairments. This work directly supports the broader national agenda for child eye health and aligns with the <strong>2030 In Sight</strong> global strategy.</p>
+                
+                <p>Careen is a graduate of <strong>KCMC School of Optometry</strong>, and her core competencies include <strong>comprehensive eye examinations</strong>, <strong>prescription of corrective lenses</strong>, <strong>patient education</strong>, and <strong>managing outreach programs</strong>. She has been at the forefront of school screenings and vision care campaigns in Lindi, Mtwara, Simiyu, Kilimanjaro, and other regions.</p>
+                
+                <p>As a passionate advocate for quality, accessible eye care, Careen has represented Vision Care Foundation at both national and international platforms, including the <strong>IAPB Council of Members</strong> and the <strong>All Eye Health Scientific Congress</strong>. She is also a proud, active member of the <strong>Tanzania Optometric Association (TOA)</strong>.</p>
+                
+                <p>Careen's leadership, compassion, and technical expertise make her a powerful force in the fight against avoidable blindness in Tanzania.</p>
+            </div>
+        </div>
+    </div>
+
+        <!-- Happy Waziri Modal -->
+        <div class="modal" id="happy-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close-modal">&times;</span>
+                    <h3>Happy Waziri</h3>
+                    <span class="modal-position">Team Member</span>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Happy Waziri</strong> is a dedicated member of the Vision Care Foundation team, contributing significantly to our mission of eliminating preventable blindness.</p>
+                    <p>With expertise in community outreach and patient care, Happy plays a crucial role in organizing and implementing our eye health programs across Tanzania.</p>
+                    <p>Her commitment to serving underserved populations and ensuring access to quality eye care services makes her an invaluable asset to our organization.</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- JavaScript for Modal Functionality -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Get all read more buttons
+                const readMoreBtns = document.querySelectorAll('.read-more-btn');
+                
+                // Add click event to each button
+                readMoreBtns.forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const memberId = this.getAttribute('data-member');
+                        const modal = document.getElementById(`${memberId}-modal`);
+                        modal.style.display = 'block';
+                        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+                    });
+                });
+                
+                // Get all close buttons
+                const closeBtns = document.querySelectorAll('.close-modal');
+                
+                // Add click event to each close button
+                closeBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const modal = this.closest('.modal');
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto'; // Re-enable scrolling
+                    });
+                });
+                
+                // Close modal when clicking outside content
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    modal.addEventListener('click', function(e) {
+                        if (e.target === this) {
+                            this.style.display = 'none';
+                            document.body.style.overflow = 'auto';
+                        }
+                    });
+                });
+                
+                // Mobile menu functionality
+                const mobileMenuBtn = document.getElementById('mobile-menu');
+                const mainNav = document.getElementById('main-nav');
+                
+                mobileMenuBtn.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    this.querySelector('i').classList.toggle('fa-bars');
+                    this.querySelector('i').classList.toggle('fa-times');
+                });
+            });
+        </script>
+    </body>
+    </html>
